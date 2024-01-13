@@ -8,6 +8,7 @@ pipeline {
             steps{
                 withsSonarQubeEnv(sonarserver){
                 sh 'mvn sonar:sonar mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=alkero2023_Week16-code'
+              // sh  'mvn sonar:sonar'//
             }
             }
         }
