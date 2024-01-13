@@ -18,5 +18,12 @@ pipeline {
             }
         }
         
+        stage ('upload artifact'){
+            steps{
+               sh 'curl -uadmin:AP291fErvKpPf63GXf5hQpvpi5R -T \
+               target/bio*.jar\
+               "http://35.153.194.69:8081/artifactory/geoapp/"'
+            }
+        }
     }
 }
