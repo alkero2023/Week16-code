@@ -5,7 +5,7 @@ pipeline{
         stages{
             stage('check current directory'){
                 steps[
-                    sh "pwd"
+                    sh 'pwd'
                     sh 'whoami'
                     sh 'ls'
                 ]
