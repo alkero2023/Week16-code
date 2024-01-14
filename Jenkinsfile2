@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('sonarqube scan'){
             steps{
-               withSonarQubeEnv('sonarver'){
+               withSonarQubeEnv('sonarQube'){
                 sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=alkero2023_Week16-code'
             }
             }
