@@ -6,10 +6,11 @@ pipeline {
     stages{
         stage('sonarqube scan'){
             steps{
+               WithSonarQubeEnv('sonarver'){
                 sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=alkero2023_Week16-code'
             }
+            }
         }
-        
         stage('all maven commands'){
             steps{
                 sh 'mvn clean test compile install package'
