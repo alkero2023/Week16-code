@@ -4,11 +4,12 @@ pipeline{
         }
         stages{
             stage('check current directory'){
-                steps[
+                steps{
                     sh 'pwd'
                     sh 'whoami'
-                    sh 'ls'
-                ]
+                    sh 'nproc'
+                    sh "mkdir \$(date '+%Y%m%d_%H%M%S')"
+                }
             }
         }
 }
